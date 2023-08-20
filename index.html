@@ -15,26 +15,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-    <a href="https://fontmeme.com/rupauls-drag-race-font/"><img src="https://fontmeme.com/previewtext.png" alt="rupauls-drag-race-font" border="0"></a>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-
+        <img src="images/divis drag race.png" alt="rupauls-drag-race-font">
     </header>
     <main>
         <div id="game-intro">
-            <h1>Divi's Drag Race</h1>
-              <img src="./images/Ru-Pauls-Drag-Race-background.jpeg" alt="Untucked Lounge" class="taller-img"/>
-              <br/>
-              <button id="start-button">Start your engines</button>
-              <audio src="./audio/audio-goodluck.m4a"></audio>
-              <p>Alright, my fabulous player! To kickstart the game, 
+            <img src="./images/Ru-Pauls-Drag-Race-background.jpeg" alt="Untucked Lounge" class="taller-img"/>
+            <button id="start-button"></button>
+            <audio src="./audio/audio-goodluck.mp3"></audio>
+            <div class="text-wrapper">
+                <p>Alright, my fabulous player! To kickstart the game, 
                 werk those arrow keys on your keyboard to strut your 
                 drag queen down the runway and snatch that victory!</p>
-              <br>
-            <h2>Good luck and don't fuck it up!!!</h2>
+                <br>
+                <h2>Good luck and don't fuck it up!!!</h2>
             </div>
+        </div>
       
         <div id="game-container">
             <div>
@@ -53,11 +52,14 @@
             <!-- #game-end is initially hidden using CSS style display: none -->
         <div id="game-end">
             <img src="images/Ru-Pauls-Drag-Race-background.jpeg" alt="Untucked Lounge" class="taller-img"/>
-            <h1>Sashay Away!!</h1>
+            <!-- <h1>Sashay Away!!</h1> -->
+            <img src="images/sashay away!!.png" alt="sashay away!!" class="sashay-away">
             <br/>
-            <p>Time to lip sync for your reset, honey!</p>
-            <button id="restart-button">Lip Sync</button>
+            <button id="restart-button"></button>
             <audio src="audio/audio-lipsync.mp3"></audio>
+            <div class="text-wrapper">
+                <p>Time to lip sync for your reset, honey!</p>
+            </div>
         </div>
         
     </main>
