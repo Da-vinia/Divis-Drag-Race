@@ -3,10 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divi's Drag Race</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="This is a JavaScript game.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Davinia Tosco">
+    <title>Divi's Drag Race - Davinia Tosco | Web Developer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="iconlist_img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="iconlist_img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="iconlist_img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <img src="images/divis drag race.png" alt="rupauls-drag-race-font">
+    </header>
+    <main>
+        <div id="game-intro">
+            <img src="./images/Ru-Pauls-Drag-Race-background.jpeg" alt="Untucked Lounge" class="taller-img"/>
+            <button id="start-button"></button>
+            <audio src="./audio/audio-goodluck.mp3"></audio>
+            <div class="text-wrapper">
+                <p>Alright, my fabulous player! To kickstart the game, 
+                werk those arrow keys on your keyboard to strut your 
+                drag queen down the runway and snatch that victory!</p>
+                <br>
+                <h2>Good luck and don't fuck it up!!!</h2>
+            </div>
+        </div>
+      
+        <div id="game-container">
+            <div>
+                <h2>Results</h2>
+                <p>Crowns: <span id="crowns"><img src="images/icons/crown.png" alt="crown-icon"></span></p>
+                <p>Lives: <span id="lives"><img src="images/icons/gems.png" alt="gem-icon"></span></p>
+             </div>
+              <!-- #game-screen is initially hidden using CSS style display: none -->
+            <div id="game-screen"></div>
+              <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/36Rpz4MZQhGknLEmTmHr8v?utm_source=generator" 
+              width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; 
+              picture-in-picture" loading="lazy"></iframe> -->
+              <audio src="audio/RuPaul-supermodel.mp3"></audio>
+            </div>
+      
+            <!-- #game-end is initially hidden using CSS style display: none -->
+        <div id="game-end">
+            <img src="images/Ru-Pauls-Drag-Race-background.jpeg" alt="Untucked Lounge" class="taller-img"/>
+            <!-- <h1>Sashay Away!!</h1> -->
+            <img src="images/sashay away!!.png" alt="sashay away!!" class="sashay-away">
+            <br/>
+            <button id="restart-button"></button>
+            <audio src="audio/audio-lipsync.mp3"></audio>
+            <div class="text-wrapper">
+                <p>Time to lip sync for your reset, honey!</p>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/Da-vinia" target="_blank"><i class="fab fa-github"></i></a> -->
+            <a href="https://www.linkedin.com/in/davinia-tosco-abreu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+            Made with <i class="fas fa-heart"></i> by Davinia
+        </div>
+    </footer>
     <script src="src/index.js"></script>
 </body>
 </html>
