@@ -2,14 +2,91 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
 }
-
-
-
-
-
-
-
+header {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+header img {
+    height: 10vh;
+}
+#game-intro, #game-end {
+    padding: 50px 200px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    position: relative;
+}
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    padding: 50px;
+    width: 30%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    background-image: url(images/start35px.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid #CB1CB9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+#start-button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+.text-wrapper {
+    width: 40%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    padding: 30px;
+    bottom: 30%;
+    position: absolute;
+    top: 84%;
+    left: 30%;
+    z-index: 3;
+    height: 20%;
+}
+.text-wrapper p {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+.text-wrapper h2 {
+    text-align: center;
+}
+#restart-button {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    padding: 50px;
+    width: 30%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    background-image: url(images/lip\ sync.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid #CB1CB9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+#restart-button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+.sashay-away {
+    position: absolute;
+    left: 32%;
+    top: 30%;
+}
 
 
 
