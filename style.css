@@ -4,21 +4,28 @@
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 header {
     display: flex;
     justify-content: center;
-    margin: 50px;
+    margin: 30px;
 }
 header img {
-    height: 10vh;
+    height: 6vw;
 }
-#game-intro, #game-end {
-    padding: 50px 200px;
+/* screen intro and end */
+#game-intro {
+    padding: 30px 200px;
     overflow: hidden;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     position: relative;
+    margin-bottom: 50px
 }
 #start-button {
     position: absolute;
@@ -46,7 +53,7 @@ header img {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid white;
-    padding: 30px;
+    padding: 22px;
     bottom: 30%;
     position: absolute;
     top: 84%;
@@ -87,13 +94,91 @@ header img {
     left: 32%;
     top: 30%;
 }
+/* screen game */
+#game-container {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+#game-screen {
+    height: 100%;
+    width: 100%;
+    display: block;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url('./images/RuPaul\'s\ -\ pasarela.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.walkway-wrapper{
+    z-index: 4;
+    height: 40vh;
+    width: 100vw;
+    background-image: url('images/pasarela.png');
+    overflow: hidden;
+    z-index: 2;
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 82%;
+    animation: slide 5s linear infinite; 
+}
+.results-wrapper {
+    background-color: #f2d9f0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 3%;
+    left: 80%;
+}
+.results-wrapper p {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.results-wrapper h2 {
+    margin-bottom: 10px;
+}
+/* screen end and reset */
+#game-end {
+    padding: 50px 200px;
+    overflow: hidden;
+    display: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    position: relative;
+}
 
 
 
-
+/* animations */
+@keyframes slide {
+    0% {
+      background-position: -1000px 0;
+    }
+    95% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50px 0;
+    }
+  }
 
 /* footer */
 footer {
+    margin-top: auto;
     background: #FFF0FE;
     display: flex;
     align-items: center;
