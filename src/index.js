@@ -33,7 +33,7 @@ window.onload = function () {
     }
 
     function playSound() {
-        let audioBye = new Audio2('../audio/audio-lipsync.mp3');
+        let audioBye = new Audio('../audio/audio-lipsync.mp3');
         audioBye.play();
     }
 
