@@ -1,4 +1,4 @@
-class Game {
+class Game {    
     constructor() {
         this.startScreen = document.querySelector('#game-intro');
         this.gameScreen = document.querySelector('#game-container');
@@ -18,11 +18,16 @@ class Game {
         this.height = "40vh" // 768; 
         this.width = "100vw";
         this.obstacles = [];
+        this.obstacleInterval = setInterval(() => {
+            const obstacleType = Math.random() < 0.5 ? PositiveObstacle : NegativeObstacle;
+            this.obstacles.push(new obstacleType(this.gameScreen));
+        }, 3000);
         this.score = 0;
         // "../images/icons/crown.png";
-        this.lives = 100;
+        this.lives = 5;
         // "../images/icons/gems.png";
         this.gameOver = false;
+
     }
 
     // updateLives() {
@@ -58,12 +63,10 @@ class Game {
     }
 
    
-        
-    
     update() {
         this.player.move();
-      
-        if (Math.random() > 0.98 && this.obstacles.length < 100) {
+        // aquí creamos los obstáculos
+        if (Math.random() > 0.98 && this.obstacles.length < 100) {  
           const isPositiveObstacle = Math.random() > 0.5;
       
           const obstacle = isPositiveObstacle
@@ -72,14 +75,15 @@ class Game {
       
           this.obstacles.push(obstacle);
         }
-      
+        // aquí el código para eliminar los obstáculos fuera de la pantalla
         for (let i = this.obstacles.length - 1; i >= 0; i--) {
           const obstacle = this.obstacles[i];
           obstacle.move();
-      
-          if (obstacle.top > this.height) {
+
+          if(obstacle.left > this.gameScreen.offsetWidth) {
             obstacle.element.remove();
             this.obstacles.splice(i, 1);
+        
       
             if (obstacle instanceof PositiveObstacle) {
               this.score += 100; 
@@ -93,7 +97,7 @@ class Game {
               }
             }
           }
-      
+          // aquí el código para manejar las colisiones con los obstáculos
           if (this.player.didCollide(obstacle)) {
             obstacle.element.remove();
             this.obstacles.splice(i, 1);
@@ -110,12 +114,40 @@ class Game {
               }
             }
           }
+        }   
+        this.updateScoreImages();
+        this.updateLivesImages();
+
+    }
+
+    updateScoreImages() {
+        this.displayScore.innerHTML = '';
+        for (let i = 0; i < Math.min(this.score / 100, 5); i++) {
+        const crownImage = document.createElement('img');
+        crownImage.src = '../images/icons/crown.png';
+        crownImage.className = 'crown-icon';
+        this.displayScore.appendChild(crownImage);
+         }
+    }
+
+    updateLivesImages() {
+        this.displayLives.innerHTML = '';
+        for (let i = 0; i < Math.min(this.lives, 5); i++) {
+        const gemImage = document.createElement('img');
+        gemImage.src = '../images/icons/gems.png';
+        gemImage.className = 'gem-icon';
+        this.displayLives.appendChild(gemImage);
         }
     }
+
+
+
+
+}
       
           
     
- }
+
     // endGame() {
     //     this.player.element.remove();
     //     this.obstacles.forEach(obstacle => obstacle.element.remove());
@@ -130,4 +162,4 @@ class Game {
     
     // }
 
-    // updateJump() {}
+   

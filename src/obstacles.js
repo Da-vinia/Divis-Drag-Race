@@ -3,8 +3,8 @@ class Obstacle {
         this.gameScreen = gameScreen;
         this.left = Math.floor(Math.random() * 600 + 80);
         this.top = 720;
-        this.width = 80;
-        this.height = 80;
+        this.width = 100;
+        this.height = 100;
         this.element = document.createElement('img');
         this.element.setAttribute('src', img);
         this.element.style.position = "absolute";
