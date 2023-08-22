@@ -69,9 +69,6 @@ header img {
 .text-wrapper h2 {
     text-align: center;
 }
-.results-wrapper {
-    width: auto;
-}
 #crowns, #lives {
     width: 30px;
     display: flex;
@@ -146,6 +143,7 @@ header img {
     z-index: 1;
     top: 3%;
     left: 80%;
+    width: auto;
 }
 .results-wrapper p {
     font-size: 18px;

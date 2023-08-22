@@ -5,6 +5,8 @@ class Game {
         this.endScreen = document.querySelector('#game-end');
         this.displayScore = document.querySelector('#crowns');
         this.displayLives = document.querySelector('#lives');
+        this.gameAudio = new Audio('../audio/RuPaul-supermodel.mp3');
+        // this.gameAudio.loop = true;
         this.player = new Player (
             this.gameScreen,
             100, // left
@@ -12,8 +14,7 @@ class Game {
             500, // width
             700, // height
             "../images/drags/drag3.png",
-            2, // z-index
-            "../audio/RuPaul-supermodel.mp3"
+            2 // z-index
         )
         this.height = "40vh" // 768; 
         this.width = "100vw";
@@ -52,6 +53,16 @@ class Game {
         this.gameScreen.style.display = 'flex';
         // this.updateLives();
         this.gameLoop();
+        this.gameAudio.play();
+
+        const gameScreen = document.querySelector('#game-container');
+        gameScreen.style.display = "flex";
+
+        // setTimeout(() => {
+        //     this.gameAudio.pause();
+        //     gameScreen.style.display = 'none';
+        // }, 8000);
+        
     }
 
     gameLoop() {
