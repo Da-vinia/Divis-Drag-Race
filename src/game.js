@@ -8,7 +8,7 @@ class Game {
         this.player = new Player (
             this.gameScreen,
             100, // left
-            0, // top
+            500, // top
             500, // width
             700, // height
             "../images/drags/drag3.png",
@@ -20,7 +20,7 @@ class Game {
         this.obstacles = [];
         this.score = 0;
         // "../images/icons/crown.png";
-        this.lives = 5;
+        this.lives = 100;
         // "../images/icons/gems.png";
         this.gameOver = false;
     }
@@ -57,57 +57,65 @@ class Game {
         window.requestAnimationFrame(() => this.gameLoop());
     }
 
+   
+        
+    
     update() {
         this.player.move();
-        
+      
+        if (Math.random() > 0.98 && this.obstacles.length < 100) {
+          const isPositiveObstacle = Math.random() > 0.5;
+      
+          const obstacle = isPositiveObstacle
+            ? new PositiveObstacle(this.gameScreen)
+            : new NegativeObstacle(this.gameScreen);
+      
+          this.obstacles.push(obstacle);
+        }
+      
+        for (let i = this.obstacles.length - 1; i >= 0; i--) {
+          const obstacle = this.obstacles[i];
+          obstacle.move();
+      
+          if (obstacle.top > this.height) {
+            obstacle.element.remove();
+            this.obstacles.splice(i, 1);
+      
+            if (obstacle instanceof PositiveObstacle) {
+              this.score += 100; 
+              this.displayScore.textContent = this.score;
+            } else if (obstacle instanceof NegativeObstacle) {
+              this.lives--;
+              this.displayLives.textContent = this.lives;
+      
+              if (this.lives <= 0) {
+                this.endGame();
+              }
+            }
+          }
+      
+          if (this.player.didCollide(obstacle)) {
+            obstacle.element.remove();
+            this.obstacles.splice(i, 1);
+      
+            if (obstacle instanceof PositiveObstacle) {
+              this.score += 100; 
+              this.displayScore.textContent = this.score;
+            } else if (obstacle instanceof NegativeObstacle) {
+              this.lives--;
+              this.displayLives.textContent = this.lives;
+      
+              if (this.lives <= 0) {
+                this.endGame();
+              }
+            }
+          }
+        }
     }
-    //     if(Math.random() > 0.98 && this.obstacles.length < 8) {
-    //         const positiveObstacle = Math.random() > 0.5;
-    //         const obstacleImg = positiveObstacle ? "../images/icons/crown.png" : "../images/icons/gems.png";
-
-    //         const obstacle = new Obstacle(this.gameScreen, obstacleImg, positiveObstacle);
-    //         this.obstacles.push(obstacle);
-    //     }
-
-    //     for(let i = this.obstacles.length -1; i >= 0; i--) {
-    //         const obstacle = this.obstacles[i];
-    //         obstacle.move();
-
-    //         if(obstacle.top > this.height) {
-    //             obstacle.element.remove();
-    //             this.obstacles.splice(i, 1);
-
-    //             if(obstacle.positiveObstacle) {
-    //                 this.score++;
-    //                 this.displayScore.textContent = this.score;
-    //             } else {
-    //                 this.lives--;
-    //                 this.displayLives.textContent = this.lives;
-
-    //                 if(this.lives <= 0) {
-    //                     this.endGame()
-    //                 }
-    //             }
-    //         }
-    //         if(this.player.didCollide(obstacle)) {
-    //             obstacle.element.remove();
-    //             this.obstacles.splice(i, 1);
-
-    //             if(obstacle.positiveObstacle) {
-    //                 this.score++;
-    //                 this.displayScore.textContent = this.score;
-    //             } else {
-    //                 this.lives--;
-    //                 this.displayLives.textContent = this.lives;
-
-    //                 if(this.lives <= 0){
-    //                     this.endGame();
-    //                 }
-    //             }
-    //         }
-    //     }    
-    // }
-
+      
+          
+    
+ }
     // endGame() {
     //     this.player.element.remove();
     //     this.obstacles.forEach(obstacle => obstacle.element.remove());
@@ -123,4 +131,3 @@ class Game {
     // }
 
     // updateJump() {}
-}
