@@ -3,10 +3,14 @@ window.onload = function () {
     const restartButton = document.getElementById("restart-button");
     
     startButton.addEventListener("click", function () {
-    //   startGame();
+        // startGame();
         playSoundIntro();
-        setTimeout(startGame(), 5000);
-        
+        // setTimeout(startGame(), 5000);
+    
+        setTimeout(function () {
+            // playSoundIntro();
+            startGame();
+        }, 5000);
     });
   
     restartButton.addEventListener('click', function() {
