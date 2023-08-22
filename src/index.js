@@ -49,9 +49,9 @@ window.onload = function () {
             game.player.directionX = 1;
             break;
           case "ArrowUp":
-            // if (this.player.isOnGround) {
-            //   this.player.velocityY = -10; // check this value later
-            //   this.player.isOnGround = false;
+            // if (game.player.isOnGround) {
+            //   game.player.velocityY = -1; // check this value later
+            //   game.player.isOnGround = false;
             // }
             game.player.directionY = -1;
             break;

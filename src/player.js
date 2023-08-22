@@ -23,6 +23,7 @@ class Player {
     }
 
     move() {
+        
         this.left += this.directionX;
         this.top += this.directionY;
         this.updatePosition();
@@ -32,21 +33,22 @@ class Player {
         const maxLeft = this.gameScreen.offsetWidth - this.width - 10;
         const maxTop = this.gameScreen.offsetHeight - this.height - 10;
 
-    if (this.left < minLeft) {
+        if (this.left < minLeft) {
       this.left = minLeft;
-    }
+        }
 
-    if (this.top < minTop) {
+        if (this.top < minTop) {
       this.top = minTop;
-    }
+        }
 
-    if (this.left > maxLeft) {
+        if (this.left > maxLeft) {
       this.left = maxLeft;
-    }
+        }
 
-    if (this.top > maxTop) {
+        if (this.top > maxTop) {
       this.top = maxTop;
-    }
+        }
+          
     }
     
       
