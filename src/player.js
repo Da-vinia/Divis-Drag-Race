@@ -32,23 +32,32 @@ class Player {
         const maxLeft = this.gameScreen.offsetWidth - this.width - 10;
         const maxTop = this.gameScreen.offsetHeight - this.height - 10;
 
-    if (this.left < minLeft) {
+        if (this.left < minLeft) {
       this.left = minLeft;
-    }
+        }
 
-    if (this.top < minTop) {
+        if (this.top < minTop) {
       this.top = minTop;
-    }
+        }
 
-    if (this.left > maxLeft) {
+        if (this.left > maxLeft) {
       this.left = maxLeft;
-    }
+        }
 
-    if (this.top > maxTop) {
+        if (this.top > maxTop) {
       this.top = maxTop;
-    }
+        }
     }
     
+    jump() {
+        const jumpHeight = 150;
+        const jumpSpeed = 0.5;
+        const maxTop = this.gameScreen.offsetHeight - this.height - 10;
+
+        if(this.top === maxTop) {
+            this.directionY = jumpHeight * jumpSpeed;
+        }
+    }
       
     updatePosition() {
         this.element.style.left = `${this.left}px`;

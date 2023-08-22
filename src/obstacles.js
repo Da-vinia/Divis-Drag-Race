@@ -26,7 +26,6 @@ class Obstacle {
     move() {
         this.left += 10;
         this.updatePosition();
-        
     }
 
 }
@@ -35,7 +34,7 @@ class PositiveObstacle extends Obstacle {
     constructor(gameScreen) {
       const imagePaths = [
         "../images/obstacles/peluca.png",
-        "../images/obstacles/pendientes.png",
+        "../images/obstacles/earrings2.png",
         "../images/obstacles/pintalabios.png",
         "../images/obstacles/tacones2.png"
       ];

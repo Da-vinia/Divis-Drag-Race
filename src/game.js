@@ -8,7 +8,7 @@ class Game {
         this.player = new Player (
             this.gameScreen,
             100, // left
-            500, // top
+            400, // top
             500, // width
             700, // height
             "../images/drags/drag3.png",
