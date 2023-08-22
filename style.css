@@ -69,8 +69,13 @@ header img {
 .text-wrapper h2 {
     text-align: center;
 }
+.results-wrapper {
+    width: auto;
+}
 #crowns, #lives {
-    width: 40px;
+    width: 30px;
+    display: flex;
+    flex-direction: row;
 }
 #restart-button {
     position: absolute;

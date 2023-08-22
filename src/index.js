@@ -53,7 +53,8 @@ window.onload = function () {
             //   this.player.velocityY = -10; // check this value later
             //   this.player.isOnGround = false;
             // }
-            game.player.directionY = -1;
+            game.player.jump();
+            // game.player.directionY = -1;
             break;
           case "ArrowDown":
             game.player.directionY = 1;
