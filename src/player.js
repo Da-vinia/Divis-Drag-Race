@@ -51,7 +51,7 @@ class Player {
     }
     
     jump() {
-        const jumpHeight = 100;
+        const jumpHeight = 150;
         const jumpSpeed = 0.5;
         const maxTop = this.gameScreen.offsetHeight - this.height - 10;
 

@@ -31,7 +31,7 @@ class Game {
         this.lives = 5;
         // "../images/icons/gems.png";
         this.gameOver = false;
-        this.obstaclesGeneratedThisTurn = 0;
+       
 
     }
 
@@ -121,7 +121,7 @@ class Game {
         
       
             if (obstacle instanceof PositiveObstacle) {
-              this.score += 100; 
+              this.score += 1; 
               this.displayScore.textContent = this.score;
             } else if (obstacle instanceof NegativeObstacle) {
               this.lives--;
@@ -129,7 +129,8 @@ class Game {
       
               if (this.lives <= 0) {
                 this.endGame();
-              } else if (this.score === 10) {
+              } else if (this.score === 5) {
+                this.gameScreen.style.display = "none";
                 this.displayWinner.style.display = 'block';
               }
             }
@@ -140,7 +141,7 @@ class Game {
             this.obstacles.splice(i, 1);
       
             if (obstacle instanceof PositiveObstacle) {
-              this.score += 10; 
+              this.score += 1; 
               this.displayScore.textContent = this.score;
             } else if (obstacle instanceof NegativeObstacle) {
               this.lives--;
@@ -159,7 +160,7 @@ class Game {
 
     updateScoreImages() {
         this.displayScore.innerHTML = '';
-        for (let i = 0; i < Math.min(this.score / 10, 5); i++) {
+        for (let i = 0; i < Math.min(this.score / 1, 5); i++) {
         const crownImage = document.createElement('img');
         crownImage.src = '../images/icons/crown.png';
         crownImage.className = 'crown-icon';
@@ -177,12 +178,7 @@ class Game {
         }
     }
 
-
-
-
-
-      
-        endGame() {
+    endGame() {
         this.player.element.remove();
         this.obstacles.forEach(obstacle => obstacle.element.remove());
         
