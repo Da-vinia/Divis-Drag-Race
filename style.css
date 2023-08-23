@@ -89,7 +89,7 @@ header img {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-#restart-button:hover {
+#restart-button:hover, #restart-button-winner {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     transform: scale(1.05);
 }
@@ -163,6 +163,7 @@ header img {
     flex-direction: column;
     position: relative;
 }
+/* winner screen */
 #congrats {
     height: 100vh;
     width: 100vw;
@@ -185,6 +186,23 @@ header img {
     top: 30%;
     z-index: 2;
     left: 20%;
+}
+#restart-button-winner{
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    padding: 50px;
+    width: 30%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    background-image: url(images/Shantay\ you\ stay!.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid #CB1CB9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    z-index: 5;
 }
 
 /* animations */
