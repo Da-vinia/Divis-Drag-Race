@@ -26,7 +26,7 @@ class Game {
         // }, 3000);
         this.score = 0;
         // "../images/icons/crown.png";
-        this.lives = 5;
+        this.lives = 100;
         // "../images/icons/gems.png";
         this.gameOver = false;
 
@@ -78,16 +78,28 @@ class Game {
     update() {
         this.player.move();
         // aquí creamos los obstáculos
-        if (Math.random() > 0.98 && this.obstacles.length < 100) {  
-          const isPositiveObstacle = Math.random() > 0.5;
-      
-          const obstacle = isPositiveObstacle
-            ? new PositiveObstacle(this.gameScreen)
-            : new NegativeObstacle(this.gameScreen);
-      
-          this.obstacles.push(obstacle);
-          
-        }
+        if (Math.random() > 0.98 && this.obstacles.length < 1) {  
+            const isPositiveObstacle = Math.random() > 0.5;
+        
+            const obstacle = isPositiveObstacle
+              ? new PositiveObstacle(this.gameScreen)
+              : new NegativeObstacle(this.gameScreen);
+              this.obstacles.push(obstacle);
+            
+          }
+          if(this.obstacles.length && this.obstacles.length < 2) {
+            const obstacle = this.obstacles[0]
+            if(obstacle.left > 400) {
+                const isPositiveObstacle = Math.random() > 0.5;
+        
+            const obstacle = isPositiveObstacle
+              ? new PositiveObstacle(this.gameScreen)
+              : new NegativeObstacle(this.gameScreen);
+              this.obstacles.push(obstacle);
+            }
+          }
+
+        
         // aquí el código para eliminar los obstáculos fuera de la pantalla
         for (let i = this.obstacles.length - 1; i >= 0; i--) {
           const obstacle = this.obstacles[i];

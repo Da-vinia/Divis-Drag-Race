@@ -70,7 +70,6 @@ header img {
     text-align: center;
 }
 #crowns, #lives {
-    width: 30px;
     display: flex;
     flex-direction: row;
 }
@@ -142,8 +141,9 @@ header img {
     position: absolute;
     z-index: 1;
     top: 3%;
-    left: 80%;
-    width: auto;
+    left: calc(100% - 400px);
+    right: 50%;
+    width: fit-content;
 }
 .results-wrapper p {
     font-size: 18px;
