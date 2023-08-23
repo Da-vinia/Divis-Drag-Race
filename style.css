@@ -163,7 +163,29 @@ header img {
     flex-direction: column;
     position: relative;
 }
+#congrats {
+    height: 100vh;
+    width: 100vw;
+    display: none;
+}
 
+#congrats video {
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+.condrag {
+    position: absolute;
+    top: 40%;
+    z-index: 3;
+    left: 20%;
+}
+.category {
+    position: absolute;
+    top: 30%;
+    z-index: 2;
+    left: 20%;
+}
 
 /* animations */
 @keyframes slide {

@@ -6,6 +6,7 @@ class Game {
         this.displayScore = document.querySelector('#crowns');
         this.displayLives = document.querySelector('#lives');
         this.gameAudio = new Audio('../audio/RuPaul-supermodel.mp3');
+        this.displayWinner = document.querySelector('#congrats');
         // this.gameAudio.loop = true;
         this.player = new Player (
             this.gameScreen,
@@ -54,6 +55,7 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`;
         this.startScreen.style.display = 'none';
         this.gameScreen.style.display = 'flex';
+        this.displayWinner.style.display = 'none';
         // this.updateLives();
         this.gameLoop();
         this.gameAudio.play();
@@ -127,6 +129,8 @@ class Game {
       
               if (this.lives <= 0) {
                 this.endGame();
+              } else if (this.score === 10) {
+                this.displayWinner.style.display = 'block';
               }
             }
           }
