@@ -15,10 +15,14 @@ window.onload = function () {
   
     restartButton.addEventListener('click', function() {
         playSound();
-        setTimeout(restartGame(), 6000);
+        
+        setTimeout(function () {
+            // playSoundIntro();
+            restartGame();
+        }, 6000);
     //   restartGame();
       
-    })
+    });
   
     function startGame() {
       console.log("start game");

@@ -16,19 +16,21 @@ class Game {
             "../images/drags/drag3.png",
             2 // z-index
         )
-        this.height = "40vh" // 768; 
+        this.player.speed = 3;
+        this.height = "40vh"; // 768; 
         this.width = "100vw";
         this.obstacles = [];
-        this.obstacleSpeed = 5;
+        this.obstacleSpeed = 1;
         // this.obstacleInterval = setInterval(() => {
         //     const obstacleType = Math.random() < 0.5 ? PositiveObstacle : NegativeObstacle;
         //     this.obstacles.push(new obstacleType(this.gameScreen));
         // }, 3000);
         this.score = 0;
         // "../images/icons/crown.png";
-        this.lives = 100;
+        this.lives = 5;
         // "../images/icons/gems.png";
         this.gameOver = false;
+        this.obstaclesGeneratedThisTurn = 0;
 
     }
 
@@ -80,16 +82,16 @@ class Game {
         // aquí creamos los obstáculos
         if (Math.random() > 0.98 && this.obstacles.length < 1) {  
             const isPositiveObstacle = Math.random() > 0.5;
-        
             const obstacle = isPositiveObstacle
               ? new PositiveObstacle(this.gameScreen)
               : new NegativeObstacle(this.gameScreen);
               this.obstacles.push(obstacle);
             
           }
-          if(this.obstacles.length && this.obstacles.length < 2) {
+          if (this.obstacles.length === 1) {
             const obstacle = this.obstacles[0]
-            if(obstacle.left > 400) {
+            console.log(obstacle)
+            if(obstacle.left < 700) {
                 const isPositiveObstacle = Math.random() > 0.5;
         
             const obstacle = isPositiveObstacle
@@ -105,6 +107,11 @@ class Game {
           const obstacle = this.obstacles[i];
           obstacle.move(this.obstacleSpeed);
 
+
+        //   if (obstacle.left < -obstacle.width) {
+        //     obstacle.element.remove();
+        //     this.obstacles.splice(i, 1);
+        
 
           if(obstacle.left > this.gameScreen.offsetWidth) {
             obstacle.element.remove();
@@ -129,7 +136,7 @@ class Game {
             this.obstacles.splice(i, 1);
       
             if (obstacle instanceof PositiveObstacle) {
-              this.score += 100; 
+              this.score += 10; 
               this.displayScore.textContent = this.score;
             } else if (obstacle instanceof NegativeObstacle) {
               this.lives--;
@@ -148,7 +155,7 @@ class Game {
 
     updateScoreImages() {
         this.displayScore.innerHTML = '';
-        for (let i = 0; i < Math.min(this.score / 100, 5); i++) {
+        for (let i = 0; i < Math.min(this.score / 10, 5); i++) {
         const crownImage = document.createElement('img');
         crownImage.src = '../images/icons/crown.png';
         crownImage.className = 'crown-icon';
@@ -169,23 +176,20 @@ class Game {
 
 
 
-}
+
       
-          
-    
-
-    // endGame() {
-    //     this.player.element.remove();
-    //     this.obstacles.forEach(obstacle => obstacle.element.remove());
+        endGame() {
+        this.player.element.remove();
+        this.obstacles.forEach(obstacle => obstacle.element.remove());
         
-    //     this.gameOver = true;
+        this.gameOver = true;
         
-    //     this.gameScreen.style.display = "none";
-    //     this.endScreen.style.display = "flex";   
-    // }
+        this.gameScreen.style.display = "none";
+        this.endScreen.style.display = "flex";   
+        this.gameAudio.pause();
+        
+    }
     
-    // sumScore() {
-    
-    // }
-
+   
+}
    

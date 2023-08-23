@@ -7,6 +7,7 @@ class Player {
         this.height = height;
         this.directionX = 0;
         this.directionY = 0;
+        this.speed = 3;
         this.element = document.createElement('img');
         this.element.setAttribute('src', img);
         this.element.style.position = "absolute";
@@ -23,8 +24,8 @@ class Player {
     }
 
     move() {
-        this.left += this.directionX;
-        this.top += this.directionY;
+        this.left += this.directionX * this.speed;
+        this.top += this.directionY * this.speed;
         this.updatePosition();
 
         const minLeft = 10;
@@ -50,7 +51,7 @@ class Player {
     }
     
     jump() {
-        const jumpHeight = 150;
+        const jumpHeight = 100;
         const jumpSpeed = 0.5;
         const maxTop = this.gameScreen.offsetHeight - this.height - 10;
 
