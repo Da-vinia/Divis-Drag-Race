@@ -19,10 +19,11 @@ class Game {
         this.height = "40vh" // 768; 
         this.width = "100vw";
         this.obstacles = [];
-        this.obstacleInterval = setInterval(() => {
-            const obstacleType = Math.random() < 0.5 ? PositiveObstacle : NegativeObstacle;
-            this.obstacles.push(new obstacleType(this.gameScreen));
-        }, 3000);
+        this.obstacleSpeed = 5;
+        // this.obstacleInterval = setInterval(() => {
+        //     const obstacleType = Math.random() < 0.5 ? PositiveObstacle : NegativeObstacle;
+        //     this.obstacles.push(new obstacleType(this.gameScreen));
+        // }, 3000);
         this.score = 0;
         // "../images/icons/crown.png";
         this.lives = 5;
@@ -85,11 +86,13 @@ class Game {
             : new NegativeObstacle(this.gameScreen);
       
           this.obstacles.push(obstacle);
+          
         }
         // aquí el código para eliminar los obstáculos fuera de la pantalla
         for (let i = this.obstacles.length - 1; i >= 0; i--) {
           const obstacle = this.obstacles[i];
-          obstacle.move();
+          obstacle.move(this.obstacleSpeed);
+
 
           if(obstacle.left > this.gameScreen.offsetWidth) {
             obstacle.element.remove();
