@@ -7,6 +7,7 @@ class Player {
         this.height = height;
         this.directionX = 0;
         this.directionY = 0;
+        this.speed = 3;
         this.element = document.createElement('img');
         this.element.setAttribute('src', img);
         this.element.style.position = "absolute";
@@ -16,15 +17,13 @@ class Player {
         this.element.style.top = `${top}px`;
         this.element.style.zIndex = 2;
         this.gameScreen.appendChild(this.element);
-        // add the sound
-        // this.element = document.createElement('audio');
-        // this.element.setAttribute('src', 'controls', 'autoplay', audio);
-        // this.gameScreen.appendChild(this.element);
+        this.gravity = 0.02;
     }
 
     move() {
-        this.left += this.directionX;
-        this.top += this.directionY;
+        this.directionY += this.gravity;
+        this.left += this.directionX * this.speed;
+        this.top += this.directionY * this.speed;
         this.updatePosition();
 
         const minLeft = 10;
@@ -50,12 +49,12 @@ class Player {
     }
     
     jump() {
-        const jumpHeight = 150;
+        const jumpHeight = 20;
         const jumpSpeed = 0.5;
         const maxTop = this.gameScreen.offsetHeight - this.height - 10;
 
         if(this.top === maxTop) {
-            this.directionY = jumpHeight * jumpSpeed;
+            this.directionY = -jumpHeight * jumpSpeed;
         }
     }
       

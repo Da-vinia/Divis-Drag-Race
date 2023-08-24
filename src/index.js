@@ -1,24 +1,30 @@
 window.onload = function () {
     const startButton = document.getElementById("start-button");
     const restartButton = document.getElementById("restart-button");
+    const restartButtonWinner = document.getElementById('restart-button-winner');
     
     startButton.addEventListener("click", function () {
-        // startGame();
         playSoundIntro();
-        // setTimeout(startGame(), 5000);
     
         setTimeout(function () {
-            // playSoundIntro();
             startGame();
         }, 5000);
     });
   
     restartButton.addEventListener('click', function() {
         playSound();
-        setTimeout(restartGame(), 6000);
-    //   restartGame();
-      
-    })
+        
+        setTimeout(function () {
+            restartGame();
+        }, 6000);  
+    });
+
+    restartButtonWinner.addEventListener('click', function() {
+        playSoundStay();
+        setTimeout(function () {
+            restartGame();
+        }, 6000);
+    });
   
     function startGame() {
       console.log("start game");
@@ -41,6 +47,12 @@ window.onload = function () {
         audioBye.play();
     }
 
+    function playSoundStay() {
+        let audioShantayStay = new Audio('../audio/shantay you stay.mp3');
+        audioShantayStay.play();
+    }
+
+
     window.addEventListener("keydown", (event) => {
         console.log(event.key);
         event.preventDefault();
@@ -53,12 +65,7 @@ window.onload = function () {
             game.player.directionX = 1;
             break;
           case "ArrowUp":
-            // if (this.player.isOnGround) {
-            //   this.player.velocityY = -10; // check this value later
-            //   this.player.isOnGround = false;
-            // }
             game.player.jump();
-            // game.player.directionY = -1;
             break;
           case "ArrowDown":
             game.player.directionY = 1;
