@@ -7,7 +7,7 @@ class Player {
         this.height = height;
         this.directionX = 0;
         this.directionY = 0;
-        this.speed = 3;
+        this.speed = 7;
         this.element = document.createElement('img');
         this.element.setAttribute('src', img);
         this.element.style.position = "absolute";
@@ -17,7 +17,7 @@ class Player {
         this.element.style.top = `${top}px`;
         this.element.style.zIndex = 2;
         this.gameScreen.appendChild(this.element);
-        this.gravity = 0.02;
+        this.gravity = 0.1;
     }
 
     move() {

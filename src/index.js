@@ -54,7 +54,7 @@ window.onload = function () {
 
 
     window.addEventListener("keydown", (event) => {
-        console.log(event.key);
+        // console.log(event.key);
         event.preventDefault();
         
         switch (event.key) {

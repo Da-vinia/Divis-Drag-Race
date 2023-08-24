@@ -17,7 +17,7 @@ class Game {
             2 // z-index
         )
         this.player.speed = 3;
-        this.height = "40vh"; // 768; 
+        this.height = "40vh";  
         this.width = "100vw";
         this.obstacles = [];
         this.obstacleSpeed = 1;
@@ -62,7 +62,7 @@ class Game {
         }
           if (this.obstacles.length === 1) {
             const obstacle = this.obstacles[0]
-            console.log(obstacle)
+        
             if(obstacle.left < 700) {
                 const isPositiveObstacle = Math.random() > 0.5;
         
@@ -90,16 +90,17 @@ class Game {
             if (obstacle instanceof PositiveObstacle) {
               this.score += 1; 
               this.displayScore.textContent = this.score;
+              
             } else if (obstacle instanceof NegativeObstacle) {
               this.lives--;
               this.displayLives.textContent = this.lives;
-      
-              if (this.lives <= 0) {
-                this.endGame();
-              } else if (this.score === 5) {
-                this.winner();
-              }
             }
+          }
+          if (this.lives <= 0) {
+            this.endGame();
+          }
+          if (this.score >= 5) {
+            this.winner();
           }
         }   
         this.updateScoreImages();
@@ -130,7 +131,7 @@ class Game {
     endGame() {
         this.player.element.remove();
         this.obstacles.forEach(obstacle => obstacle.element.remove());
-        console.log("VIDASSSSSS", this.lives)
+  
         this.gameOver = true;
         
         this.gameScreen.style.display = "none";
