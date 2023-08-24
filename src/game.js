@@ -5,7 +5,7 @@ class Game {
         this.endScreen = document.querySelector('#game-end');
         this.displayScore = document.querySelector('#crowns');
         this.displayLives = document.querySelector('#lives');
-        this.gameAudio = new Audio('../audio/RuPaul-supermodel.mp3');
+        this.gameAudio = new Audio('/RuPaul-supermodel.mp3');
         this.displayWinner = document.querySelector('#congrats');
         this.player = new Player (
             this.gameScreen,
@@ -13,7 +13,7 @@ class Game {
             400, // top
             500, // width
             700, // height
-            "../images/drags/drag3.png",
+            "/images/drag3.png",
             2 // z-index
         )
         this.player.speed = 3;
@@ -112,7 +112,7 @@ class Game {
         this.displayScore.innerHTML = '';
         for (let i = 0; i < Math.min(this.score / 1, 5); i++) {
         const crownImage = document.createElement('img');
-        crownImage.src = '../images/icons/crown.png';
+        crownImage.src = '/images/crown.png';
         crownImage.className = 'crown-icon';
         this.displayScore.appendChild(crownImage);
         }
@@ -122,7 +122,7 @@ class Game {
         this.displayLives.innerHTML = '';
         for (let i = 0; i < Math.min(this.lives, 5); i++) {
         const gemImage = document.createElement('img');
-        gemImage.src = '../images/icons/gems.png';
+        gemImage.src = '/images/gems.png';
         gemImage.className = 'gem-icon';
         this.displayLives.appendChild(gemImage);
         }
