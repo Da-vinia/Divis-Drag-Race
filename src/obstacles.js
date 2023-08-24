@@ -31,10 +31,10 @@ class Obstacle {
 class PositiveObstacle extends Obstacle {
     constructor(gameScreen) {
       const imagePaths = [
-        "../images/obstacles/peluca.png",
-        "../images/obstacles/earrings2.png",
-        "../images/obstacles/pintalabios.png",
-        "../images/obstacles/tacones2.png"
+        "/images/peluca.png",
+        "/images/earrings2.png",
+        "/images/pintalabios.png",
+        "/images/tacones2.png"
       ];
       const randomImagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
       
@@ -45,10 +45,10 @@ class PositiveObstacle extends Obstacle {
 class NegativeObstacle extends Obstacle {
     constructor(gameScreen) {
       const imagePaths = [
-        "../images/obstacles/bigote.png",
-        "../images/obstacles/corbata.png",
-        "../images/obstacles/poloc-shirt.png",
-        "../images/obstacles/sombrero de copa.png"
+        "/images/bigote.png",
+        "/images/corbata.png",
+        "/images/poloc-shirt.png",
+        "/images/sombrero de copa.png"
       ];
       const randomImagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
       

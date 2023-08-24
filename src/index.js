@@ -38,23 +38,22 @@ window.onload = function () {
     }
 
     function playSoundIntro() {
-        let audioIntro = new Audio('../audio/audio-goodluck.mp3');
+        let audioIntro = new Audio('/audio-goodluck.mp3');
         audioIntro.play();
     }
 
     function playSound() {
-        let audioBye = new Audio('../audio/audio-lipsync.mp3');
+        let audioBye = new Audio('/audio-lipsync.mp3');
         audioBye.play();
     }
 
     function playSoundStay() {
-        let audioShantayStay = new Audio('../audio/shantay you stay.mp3');
+        let audioShantayStay = new Audio('/shantay-you-stay.mp3');
         audioShantayStay.play();
     }
 
 
     window.addEventListener("keydown", (event) => {
-        // console.log(event.key);
         event.preventDefault();
         
         switch (event.key) {

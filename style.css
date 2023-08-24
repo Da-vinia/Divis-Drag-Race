@@ -116,7 +116,7 @@ header img {
     padding: 20px 0px;
     overflow: hidden;
     position: relative;
-    background-image: url('./images/RuPaul\'s\ -\ pasarela.jpeg');
+    background-image: url('images/RuPaul\'s\ -\ pasarela.jpeg');
     background-size: cover;
     background-position: center;
 }
@@ -196,7 +196,7 @@ header img {
     border-radius: 5px;
     cursor: pointer;
     background-color: white;
-    background-image: url(images/Shantay\ you\ stay!.png);
+    background-image: url('images/Shantay.png');
     background-repeat: no-repeat;
     background-position: center;
     border: 3px solid #CB1CB9;
