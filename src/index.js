@@ -4,12 +4,9 @@ window.onload = function () {
     const restartButtonWinner = document.getElementById('restart-button-winner');
     
     startButton.addEventListener("click", function () {
-        // startGame();
         playSoundIntro();
-        // setTimeout(startGame(), 5000);
     
         setTimeout(function () {
-            // playSoundIntro();
             startGame();
         }, 5000);
     });
@@ -18,11 +15,8 @@ window.onload = function () {
         playSound();
         
         setTimeout(function () {
-            // playSoundIntro();
             restartGame();
-        }, 6000);
-    //   restartGame();
-      
+        }, 6000);  
     });
 
     restartButtonWinner.addEventListener('click', function() {
@@ -71,12 +65,7 @@ window.onload = function () {
             game.player.directionX = 1;
             break;
           case "ArrowUp":
-            // if (this.player.isOnGround) {
-            //   this.player.velocityY = -10; // check this value later
-            //   this.player.isOnGround = false;
-            // }
             game.player.jump();
-            // game.player.directionY = -1;
             break;
           case "ArrowDown":
             game.player.directionY = 1;

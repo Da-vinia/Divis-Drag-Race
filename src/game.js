@@ -7,7 +7,6 @@ class Game {
         this.displayLives = document.querySelector('#lives');
         this.gameAudio = new Audio('../audio/RuPaul-supermodel.mp3');
         this.displayWinner = document.querySelector('#congrats');
-        // this.gameAudio.loop = true;
         this.player = new Player (
             this.gameScreen,
             100, // left
@@ -22,52 +21,23 @@ class Game {
         this.width = "100vw";
         this.obstacles = [];
         this.obstacleSpeed = 1;
-        // this.obstacleInterval = setInterval(() => {
-        //     const obstacleType = Math.random() < 0.5 ? PositiveObstacle : NegativeObstacle;
-        //     this.obstacles.push(new obstacleType(this.gameScreen));
-        // }, 3000);
         this.score = 0;
-        // "../images/icons/crown.png";
         this.lives = 5;
-        // "../images/icons/gems.png";
         this.gameOver = false;
-       
-
     }
-
-    // updateLives() {
-    //     const addLives = document.getElementById("lives");
-    //     const ul = document.createElement("ul");
-    //     addLives.appendChild(ul);
       
-    //     addLives.forEach((el) => {
-    //       const newLi = document.createElement('li');
-          
-    //       newLi.innerHTML = el;
-    //       newLi.className = "live-item";
-    //       ul.appendChild(newLi);
-    //     });
-    // };
-      
-
     start() {
         this.gameScreen.style.width = `${this.width}px`;
         this.gameScreen.style.height = `${this.height}px`;
         this.startScreen.style.display = 'none';
         this.gameScreen.style.display = 'flex';
         this.displayWinner.style.display = 'none';
-        // this.updateLives();
+      
         this.gameLoop();
         this.gameAudio.play();
 
         const gameScreen = document.querySelector('#game-container');
         gameScreen.style.display = "flex";
-
-        // setTimeout(() => {
-        //     this.gameAudio.pause();
-        //     gameScreen.style.display = 'none';
-        // }, 8000);
-        
     }
 
     gameLoop() {
@@ -81,15 +51,15 @@ class Game {
    
     update() {
         this.player.move();
-        // aquí creamos los obstáculos
+        
         if (Math.random() > 0.98 && this.obstacles.length < 1) {  
             const isPositiveObstacle = Math.random() > 0.5;
             const obstacle = isPositiveObstacle
               ? new PositiveObstacle(this.gameScreen)
               : new NegativeObstacle(this.gameScreen);
-              this.obstacles.push(obstacle);
+               this.obstacles.push(obstacle);
             
-          }
+        }
           if (this.obstacles.length === 1) {
             const obstacle = this.obstacles[0]
             console.log(obstacle)
@@ -101,41 +71,18 @@ class Game {
               : new NegativeObstacle(this.gameScreen);
               this.obstacles.push(obstacle);
             }
-          }
+        }
 
-        
-        // aquí el código para eliminar los obstáculos fuera de la pantalla
         for (let i = this.obstacles.length - 1; i >= 0; i--) {
           const obstacle = this.obstacles[i];
           obstacle.move(this.obstacleSpeed);
 
-
-        //   if (obstacle.left < -obstacle.width) {
-        //     obstacle.element.remove();
-        //     this.obstacles.splice(i, 1);
         
-
-          if(obstacle.left > this.gameScreen.offsetWidth) {
+            if(obstacle.left > this.gameScreen.offsetWidth) {
             obstacle.element.remove();
             this.obstacles.splice(i, 1);
-        
-      
-            if (obstacle instanceof PositiveObstacle) {
-              this.score += 1; 
-              this.displayScore.textContent = this.score;
-            } else if (obstacle instanceof NegativeObstacle) {
-              this.lives--;
-              this.displayLives.textContent = this.lives;
-      
-              if (this.lives <= 0) {
-                this.endGame();
-              } else if (this.score === 5) {
-                this.gameScreen.style.display = "none";
-                this.displayWinner.style.display = 'block';
-              }
             }
-          }
-          // aquí el código para manejar las colisiones con los obstáculos
+          
           if (this.player.didCollide(obstacle)) {
             obstacle.element.remove();
             this.obstacles.splice(i, 1);
@@ -149,6 +96,8 @@ class Game {
       
               if (this.lives <= 0) {
                 this.endGame();
+              } else if (this.score === 5) {
+                this.winner();
               }
             }
           }
@@ -165,7 +114,7 @@ class Game {
         crownImage.src = '../images/icons/crown.png';
         crownImage.className = 'crown-icon';
         this.displayScore.appendChild(crownImage);
-         }
+        }
     }
 
     updateLivesImages() {
@@ -181,15 +130,24 @@ class Game {
     endGame() {
         this.player.element.remove();
         this.obstacles.forEach(obstacle => obstacle.element.remove());
-        
+        console.log("VIDASSSSSS", this.lives)
         this.gameOver = true;
         
         this.gameScreen.style.display = "none";
         this.endScreen.style.display = "flex";   
         this.gameAudio.pause();
-        
     }
-    
-   
+
+    winner() {
+        this.gameOver = true;
+        console.log("winner!")
+        this.player.element.remove();
+        this.obstacles.forEach(obstacle => obstacle.element.remove());
+            
+            
+        this.gameScreen.style.display = "none";
+        this.displayWinner.style.display = 'block';   
+        this.gameAudio.pause();          
+    } 
 }
    

@@ -17,13 +17,11 @@ class Player {
         this.element.style.top = `${top}px`;
         this.element.style.zIndex = 2;
         this.gameScreen.appendChild(this.element);
-        // add the sound
-        // this.element = document.createElement('audio');
-        // this.element.setAttribute('src', 'controls', 'autoplay', audio);
-        // this.gameScreen.appendChild(this.element);
+        this.gravity = 0.02;
     }
 
     move() {
+        this.directionY += this.gravity;
         this.left += this.directionX * this.speed;
         this.top += this.directionY * this.speed;
         this.updatePosition();

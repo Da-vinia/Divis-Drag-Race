@@ -2,7 +2,7 @@ class Obstacle {
     constructor(gameScreen, img, isPositive){
         this.gameScreen = gameScreen;
         this.left = 900;
-        this.top = 730;      // 720;
+        this.top = 730;      
         this.width = 100;
         this.height = 100;
         this.element = document.createElement('img');
@@ -14,7 +14,6 @@ class Obstacle {
         this.element.style.top =`${this.top}px`;
         this.element.style.zIndex = 3;
         this.gameScreen.appendChild(this.element);
-        // this.isPositive = true;
     }
 
 
@@ -27,7 +26,6 @@ class Obstacle {
         this.left += -1;
         this.updatePosition();
     }
-
 }
 
 class PositiveObstacle extends Obstacle {
@@ -41,10 +39,8 @@ class PositiveObstacle extends Obstacle {
       const randomImagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
       
       super(gameScreen, randomImagePath, true);
-      // debo añadir aquí el if statement para los puntos?
     }
 }
-  
   
 class NegativeObstacle extends Obstacle {
     constructor(gameScreen) {
