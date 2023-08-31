@@ -36,9 +36,10 @@ header img {
     border-radius: 5px;
     cursor: pointer;
     background-color: white;
-    background-image: url(images/start35px.png);
+    background-image: url('./assets/images/sentences/start35px.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
     border: 3px solid #CB1CB9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -53,7 +54,7 @@ header img {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid white;
-    padding: 22px;
+    padding: 10px;
     bottom: 30%;
     position: absolute;
     top: 84%;
@@ -62,7 +63,7 @@ header img {
     height: 20%;
 }
 .text-wrapper p {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     text-align: center;
 }
@@ -82,7 +83,7 @@ header img {
     border-radius: 5px;
     cursor: pointer;
     background-color: white;
-    background-image: url(images/lip\ sync.png);
+    background-image: url('./assets/images/sentences/lip\ sync.png');
     background-repeat: no-repeat;
     background-position: center;
     border: 3px solid #CB1CB9;
@@ -116,14 +117,14 @@ header img {
     padding: 20px 0px;
     overflow: hidden;
     position: relative;
-    background-image: url('images/RuPaul\'s\ -\ pasarela.jpeg');
+    background-image: url('./assets/images/RuPaul\'s\ -\ pasarela.jpeg');
     background-size: cover;
     background-position: center;
 }
 .walkway-wrapper{
     height: 170px;
     width: 100vw;
-    background-image: url('images/pasarela.png');
+    background-image: url('./assets/images/pasarela.png');
     overflow: hidden;
     z-index: 2;
     background-repeat: no-repeat;
@@ -177,26 +178,24 @@ header img {
 }
 .condrag {
     position: absolute;
-    top: 40%;
+    top: 43%;
     z-index: 3;
-    left: 20%;
 }
 .category {
     position: absolute;
     top: 30%;
     z-index: 2;
-    left: 20%;
 }
 #restart-button-winner{
     position: absolute;
-    top: 60%;
+    top: 63%;
     left: 35%;
     padding: 50px;
     width: 30%;
     border-radius: 5px;
     cursor: pointer;
     background-color: white;
-    background-image: url('images/Shantay.png');
+    background-image: url('./assets/images/sentences/Shantay.png');
     background-repeat: no-repeat;
     background-position: center;
     border: 3px solid #CB1CB9;
