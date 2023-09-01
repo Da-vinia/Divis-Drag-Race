@@ -57,7 +57,7 @@ header img {
     padding: 10px;
     bottom: 30%;
     position: absolute;
-    top: 84%;
+    top: 80%;
     left: 30%;
     z-index: 3;
     height: 20%;
@@ -97,7 +97,7 @@ header img {
 }
 .sashay-away {
     position: absolute;
-    left: 32%;
+    left: 28%;
     top: 30%;
 }
 /* screen game */
