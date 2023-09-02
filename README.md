@@ -39,19 +39,23 @@ The game features vibrant graphics and a user interface that displays the player
 Here are some screenshots from different screens of the game to give you a visual overview of the gameplay.
 
 - **Game Start Screen:**
-  - *Description:* This is the game's starting screen.
+  This is the game's starting screen.
+  
   ![Game Start Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/start%20screen.png)
 
 - **Gameplay Screen:**
-  - *Description:* Here's a screenshot of the gameplay in action.
+  Here's a screenshot of the gameplay in action.
+  
   ![Gameplay Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/game%20screen.png?raw=true)
 
 - **Victory! Winner Screen with Video:**
-  - *Description:* A screenshot from the winner screen with an included video.
+  A screenshot from the winner screen with an included video.
+  
  ![Victory! Winner Screen with Video](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/winner%20screen.png?raw=true)
 
 - **Game Over Screen:**
-  - *Description:* This screen appears when the game is over.
+  This screen appears when the game is over.
+  
   ![Game Over Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/game%20over%20screen.png?raw=true)
  
 ## Game Sounds and Music
