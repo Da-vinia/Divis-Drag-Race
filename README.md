@@ -33,6 +33,9 @@ Players aim to collect positive obstacles to gain points (crowns) while avoiding
 ## Graphics and UI
 The game features vibrant graphics and a user interface that displays the player's score and remaining lives. Visual elements such as crowns (for points) and gems (for lives) are used to represent in-game progress.
 
+Here are some screenshots from different screens of the game to give you a visual overview of the gameplay.
+
+![Screenshot of the start screen game]()
 
 
 ## Player Interaction
