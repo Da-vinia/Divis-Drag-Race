@@ -40,7 +40,7 @@ Here are some screenshots from different screens of the game to give you a visua
 
 - **Game Start Screen:**
   - *Description:* This is the game's starting screen.
-  - *Markdown:* `![Game Start Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/start%20screen.png?raw=true)`
+  - *Markdown:* `![Game Start Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/start%20screen.png)`
 
 - **Gameplay Screen:**
   - *Description:* Here's a screenshot of the gameplay in action.
