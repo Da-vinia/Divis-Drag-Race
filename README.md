@@ -11,6 +11,8 @@ This README provides an overview of the interactive game project. The game is a 
 - [Gameplay Mechanics](#gameplay-mechanics)
 - [Objectives and Scoring](#objectives-and-scoring)
 - [Graphics and UI](#graphics-and-ui)
+- [Game Screenshots](#game-screenshots)
+- [Game Sounds and Music](#game-sounds-and-music)
 - [Player Interaction](#player-interaction)
 - [Challenges and Strategies](#challenges-and-strategies)
 - [Technical Implementation](#technical-implementation)
@@ -33,10 +35,41 @@ Players aim to collect positive obstacles to gain points (crowns) while avoiding
 ## Graphics and UI
 The game features vibrant graphics and a user interface that displays the player's score and remaining lives. Visual elements such as crowns (for points) and gems (for lives) are used to represent in-game progress.
 
+## Game Screenshots
 Here are some screenshots from different screens of the game to give you a visual overview of the gameplay.
 
-![Screenshot of the start screen game]()
+- **Game Start Screen:**
+  - *Description:* This is the game's starting screen.
+  - *Markdown:* `![Game Start Screen](assets/images/readme/start screen.png)`
 
+- **Gameplay Screen:**
+  - *Description:* Here's a screenshot of the gameplay in action.
+  - *Markdown:* `![Gameplay Screen](assets/images/readme/game screen.png)`
+
+- **Victory! Winner Screen with Video:**
+  - *Description:* A screenshot from the winner screen with an included video.
+  - *Markdown:* `![Victory! Winner Screen with Video](assets/images/readme/winner screen.png)`
+
+- **Game Over Screen:**
+  - *Description:* This screen appears when the game is over.
+  - *Markdown:* `![Game Over Screen](assets/images/readme/game over screen.png)`
+ 
+## Game Sounds and Music
+In this game, various sound effects and music tracks are incorporated to enhance the gaming experience:
+
+- **Start Game Button Sound:**
+  - When the player clicks the "Start your engines" button on the game's start screen, it emits a legendary phrase from Ru Paul, adding a fun and immersive element to the game.
+
+- **Restart Game on Win Sound:**
+  - Upon winning the game and clicking the "Shantay you stay!" button, players are treated to more iconic Ru Paul phrase.
+
+- **Restart Game on Loss Sound:**
+  - Similarly, if the player loses the game and chooses to restart and clicking the "lip sync" button, they'll be greeted with more legendary Ru Paul sound bites.
+
+- **In-Game Music:**
+  - Throughout the game, a lively Ru Paul song plays in the background, providing an upbeat and enjoyable gaming soundtrack.
+
+These audio elements are integrated to create an engaging and entertaining gaming experience, adding a touch of Ru Paul's charisma to the gameplay.
 
 ## Player Interaction
 Players interact with the game through keyboard controls (arrows). The player character responds to movement inputs and can perform jumps to navigate obstacles.
