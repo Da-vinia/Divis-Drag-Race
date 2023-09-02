@@ -23,7 +23,7 @@ window.onload = function () {
         playSoundStay();
         setTimeout(function () {
             restartGame();
-        }, 6000);
+        }, 2000);
     });
   
     function startGame() {

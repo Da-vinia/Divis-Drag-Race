@@ -13,10 +13,7 @@ class Game {
             400, // top
             500, // width
             700, // height
-        
-    
-            "./assets/images/drags/drag3.png",
-          
+            "./assets/images/drags/drag3.png", 
             2 // z-index
         )
         this.player.speed = 3;
