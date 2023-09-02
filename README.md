@@ -40,19 +40,19 @@ Here are some screenshots from different screens of the game to give you a visua
 
 - **Game Start Screen:**
   - *Description:* This is the game's starting screen.
-  - *Markdown:* `![Game Start Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/start%20screen.png)`
+  ![Game Start Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/start%20screen.png)
 
 - **Gameplay Screen:**
   - *Description:* Here's a screenshot of the gameplay in action.
-  - *Markdown:* `![Gameplay Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/game%20screen.png?raw=true)`
+  ![Gameplay Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/game%20screen.png?raw=true)
 
 - **Victory! Winner Screen with Video:**
   - *Description:* A screenshot from the winner screen with an included video.
-  - *Markdown:* `![Victory! Winner Screen with Video](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/winner%20screen.png?raw=true)`
+ ![Victory! Winner Screen with Video](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/winner%20screen.png?raw=true)
 
 - **Game Over Screen:**
   - *Description:* This screen appears when the game is over.
-  - *Markdown:* `![Game Over Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/game%20over%20screen.png?raw=true)`
+  ![Game Over Screen](https://github.com/Da-vinia/Divis-Drag-Race/blob/main/assets/images/readme/game%20over%20screen.png?raw=true)
  
 ## Game Sounds and Music
 In this game, various sound effects and music tracks are incorporated to enhance the gaming experience:
