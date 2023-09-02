@@ -3,6 +3,8 @@
 
 This README provides an overview of the interactive game project. The game is a side-scrolling adventure where players control a character to navigate obstacles, collect items, and achieve specific goals.
 
+## Link: https://da-vinia.github.io/Divis-Drag-Race/
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Game Overview](#game-overview)
@@ -30,6 +32,8 @@ Players aim to collect positive obstacles to gain points (crowns) while avoiding
 
 ## Graphics and UI
 The game features vibrant graphics and a user interface that displays the player's score and remaining lives. Visual elements such as crowns (for points) and gems (for lives) are used to represent in-game progress.
+
+
 
 ## Player Interaction
 Players interact with the game through keyboard controls (arrows). The player character responds to movement inputs and can perform jumps to navigate obstacles.
